@@ -9,6 +9,9 @@ public class Player
     private int day;
 
     //TODO: add any player data that needs to be tracked
+    private RefData refdata;
+    //private RefFacePart refFacepart;
+    //private RefCharacter refchara;
 
     public Player()
     {
