@@ -59,6 +59,10 @@ public static class Game
     }
 
     //TODO: Add any functions needed to get single parts, get part list by type, etc.
+    public static void GetSinglePart(FacePart fPart)
+    {
+
+    }
 
     #endregion Face Part
 

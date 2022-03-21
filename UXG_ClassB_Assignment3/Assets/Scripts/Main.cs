@@ -17,5 +17,6 @@ public class Main : MonoBehaviour
         }
 
         //TODO: Game starts here
+        Game.GetPlayer();
     }
 }
