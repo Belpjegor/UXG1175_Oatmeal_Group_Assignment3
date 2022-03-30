@@ -13,7 +13,7 @@ public class Player
 
     public Player()
     {
-        playerCharacter = "";
+        playerCharacter = "1";
         day = 0;
     }
 

@@ -17,7 +17,26 @@ public class Main : MonoBehaviour
         }
 
         //TODO: Game starts here
-        Game.GetPlayer();
-        Game.GetPartList();
+        Player player = Game.GetPlayer();
+        List<FacePart> faceParts = Game.GetPartList();
+        List<Character> characters = Game.GetCharacterList();
+    }
+
+    void RandomiseFaceParts(List<FacePart> faceParts)
+    {
+        List<int> rShapeList = Common.GetRandomIntList(4, 4);
+        List<int> rEyeList = Common.GetRandomIntList(4, 4);
+        List<int> rNoseList = Common.GetRandomIntList(4, 4);
+        List<int> rMouthList = Common.GetRandomIntList(4, 4);
+
+
+        faceParts[rShapeList[0]].GetPartName();
+        faceParts[rEyeList[0] + 4].GetPartName();
+        faceParts[rNoseList[0] + 8].GetPartName();
+        faceParts[rMouthList[0] + 12].GetPartName();
+
+        List<Character> characters = Game.GetCharacterList();
+      //  characters[0].SetShape(faceParts[rList[0]] as PartShape);
+     //   characters[0].SetEyes(faceParts[rList[0]+4] as PartEyes);
     }
 }
