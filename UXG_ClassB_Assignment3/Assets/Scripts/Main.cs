@@ -18,25 +18,30 @@ public class Main : MonoBehaviour
 
         //TODO: Game starts here
         Player player = Game.GetPlayer();
-        List<FacePart> faceParts = Game.GetPartList();
-        List<Character> characters = Game.GetCharacterList();
+
+        RandomiseFaceParts(Game.GetPartList(), Game.GetCharacterList());
+
+        Debug.Log("dffdfd");
     }
 
-    void RandomiseFaceParts(List<FacePart> faceParts)
+    void RandomiseFaceParts(List<FacePart> faceParts, List<Character> characters)
     {
         List<int> rShapeList = Common.GetRandomIntList(4, 4);
         List<int> rEyeList = Common.GetRandomIntList(4, 4);
         List<int> rNoseList = Common.GetRandomIntList(4, 4);
         List<int> rMouthList = Common.GetRandomIntList(4, 4);
 
-
         faceParts[rShapeList[0]].GetPartName();
         faceParts[rEyeList[0] + 4].GetPartName();
         faceParts[rNoseList[0] + 8].GetPartName();
         faceParts[rMouthList[0] + 12].GetPartName();
 
-        List<Character> characters = Game.GetCharacterList();
-      //  characters[0].SetShape(faceParts[rList[0]] as PartShape);
-     //   characters[0].SetEyes(faceParts[rList[0]+4] as PartEyes);
+        for (int fParts = 3; fParts >= 0; fParts--)
+        {
+            characters[fParts].SetShape(faceParts[rShapeList[fParts]] as PartShape);
+            characters[fParts].SetEyes(faceParts[rEyeList[fParts]] as PartEyes);
+            characters[fParts].SetNose(faceParts[rNoseList[fParts]] as PartNose);
+            characters[fParts].SetMouth(faceParts[rMouthList[fParts]] as PartMouth);
+        }
     }
 }
