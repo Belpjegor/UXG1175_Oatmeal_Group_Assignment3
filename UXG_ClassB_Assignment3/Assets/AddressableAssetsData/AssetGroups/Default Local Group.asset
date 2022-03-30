@@ -16,7 +16,19 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 18bb62cf09e176b43ac87fe548eb16d8
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: c8e4dd0ac3a9eda41bececa844ff5760
+    m_Address: Assets/Data/Faces CSV - RefCharacter.csv
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d1469f7ed41c35541b46d8f834a34240
+    m_Address: Assets/Data/Faces CSV - RefTradePart.csv
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5f86cef4f3408e740b1ce161839f2365
+    m_Address: Assets/Data/RefData.txt
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ecd563f3d789dc342bb232108d76e927, type: 2}
   m_SchemaSet:
