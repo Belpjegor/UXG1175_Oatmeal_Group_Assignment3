@@ -8,4 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/InventoryDemo/PlayerScene.unity
+    guid: 3bde3c2c42cab28479d1da8923bfeb52
+  - enabled: 1
+    path: Assets/InventoryDemo/Room1Scene.unity
+    guid: 030909e24d809724d90757bfaef3db15
+  - enabled: 1
+    path: Assets/InventoryDemo/Room2Scene.unity
+    guid: 1b8e13fa622e65d46b72760353247747
+  - enabled: 1
+    path: Assets/InventoryDemo/InventoryHUD.unity
+    guid: d0194d218dc8bf24586bc8dd94b868ae
   m_configObjects: {}

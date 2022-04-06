@@ -7,6 +7,8 @@ public class Main : MonoBehaviour
 {
 public OverlayLoader loader;
 
+private bool isInventoryOpen = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,4 +50,31 @@ public OverlayLoader loader;
             characters[fParts].SetMouth(faceParts[rMouthList[fParts]] as PartMouth);
         }
     }
+
+    void Update()
+    {
+         //detect inventory key
+            //if (Input.GetKeyDown(KeyCode.Mouse0)) ToggleInventory();
+             //detect inventory key
+            if (Input.GetMouseButtonDown(0)) ToggleInventory();
+    }
+
+
+    private void ToggleInventory()
+        {
+            if (isInventoryOpen)
+            {
+                //close inventory
+                StartCoroutine(OverlayLoader.UnLoadSceneCo("InventoryHUD"));
+
+                isInventoryOpen = false;
+            }
+            else
+            {
+                //open inventory
+                StartCoroutine(OverlayLoader.LoadSceneCo("InventoryHUD"));
+
+                isInventoryOpen = true;
+            }
+        }
 }
