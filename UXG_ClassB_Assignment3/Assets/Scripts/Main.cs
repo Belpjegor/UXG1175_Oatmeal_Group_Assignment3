@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Main : MonoBehaviour
 {
+public OverlayLoader loader;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,8 @@ public class Main : MonoBehaviour
         RandomiseFaceParts(Game.GetPartList(), Game.GetCharacterList());
 
         Debug.Log("dffdfd");
+
+        StartCoroutine(OverlayLoader.LoadSceneCo("DialoguePanel"));
     }
 
     void RandomiseFaceParts(List<FacePart> faceParts, List<Character> characters)
