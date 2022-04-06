@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LoadScreen.unity
     guid: 1afb39bfc0251fa4bbebfb5e33610e7f
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/DialoguePanel.unity
     guid: fee85f8d69f540c49a62a62121ab4270
   m_configObjects:

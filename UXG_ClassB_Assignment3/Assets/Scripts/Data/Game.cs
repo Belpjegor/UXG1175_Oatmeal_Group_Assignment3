@@ -59,10 +59,15 @@ public static class Game
     }
 
     //TODO: Add any functions needed to get single parts, get part list by type, etc.
-    public static void GetSinglePart(FacePart fPart)
-    {
+    // public static List<PartsTrading> GetPartListByType(PartType partType)
+    // {
+    //     // return partList.FindAll(x => x.GetPartType() == partType);
+    // }
 
-    }
+    // public static PartsTrading GetPartByRefID(string aRefId)
+    // {
+    //     // return partList.Find(x => x.GetRefId() == aRefId);
+    // }
 
     #endregion Face Part
 
@@ -91,6 +96,12 @@ public static class Game
     }
 
     //TODO: Add any functions needed to get single characters, etc.
+
+    public static Character GetCharacter(string aRefId)
+    {
+        return characterList.Find(x => x.GetRefId() == aRefId);
+    }
+
 
     #endregion Character
 

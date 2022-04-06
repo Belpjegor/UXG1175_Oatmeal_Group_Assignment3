@@ -7,7 +7,7 @@ public class Faces : MonoBehaviour
 {
     public List<GameObject> facelist;
 
-    public void UpdateFaces()
+    public void UpdateMenuFaces()
     {
         List<Character> charaList = Game.GetCharacterList();
         Player player = Game.GetPlayer();
@@ -23,6 +23,7 @@ public class Faces : MonoBehaviour
         //character name
         face.GetComponentInChildren<Text>().text = isPlayer ? "You" : chara.GetName();
 
+        Common.DebugLog("UpdateEveryFace" + chara.GetName());
         face.GetComponentInChildren<CanvasFaceScript>().SetCharaFace(chara);
     }
 }

@@ -15,6 +15,12 @@ public class Character
     private PartNose charaNose;
     private PartMouth charaMouth;
 
+    //Secondary Task: generating preferences
+    private List<string> likeList;
+    private List<string> dislikeList;
+    private List<string> likeCombo;
+    private List<string> dislikeCombo;
+
     public Character (string refId, string name, Color colour)
     {
         this.refId = refId;
@@ -25,6 +31,11 @@ public class Character
         charaEyes = null;
         charaNose = null;
         charaMouth = null;
+
+        likeList = new List<string>();
+        dislikeList = new List<string>();
+        likeCombo = new List<string>();
+        dislikeCombo = new List<string>();
     }
 
     public string GetRefId()

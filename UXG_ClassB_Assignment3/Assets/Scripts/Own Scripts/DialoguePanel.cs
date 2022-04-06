@@ -11,9 +11,12 @@ public class DialoguePanel : MonoBehaviour
   private List<string> linelist;
   private int currentIndex;
 
+  private Main mScript;  
 
-  public void SetDialogue(Character speakerChar, List<string> aLineList)
+  public void SetDialogue(Character speakerChar, List<string> aLineList, Main aScript)
   {
+      mScript = aScript;
+
       speakerName.text = speakerChar.GetName();
       //speakerFace.SetFace(speakerChar);
 
@@ -30,6 +33,8 @@ public class DialoguePanel : MonoBehaviour
       }
       else
       {
+          mScript.ChatState(false);
+          
           Destroy(this.gameObject);
       }
       

@@ -64,7 +64,7 @@ public class CanvasFaceScript : MonoBehaviour
 
         //get character nose shape from Character script
         PartNose charaNose = cHara.GetNose();
-        //Common.DebugLog(cHara.GetName() + "charaNose " + charaNose.GetDisplayName()); //need to add GetDisplayName();
+        // Common.DebugLog(cHara.GetName() + "charaNose " + charaNose.GetDisplayName()); //need to add GetDisplayName();
         if (charaNose != null)
         {
             //load nose sprite
@@ -74,10 +74,9 @@ public class CanvasFaceScript : MonoBehaviour
                 //result of LoadAssetAsync
                 nose.sprite = sp.Result;
             };
+        }
 
-
-            //get character mouth shape from Character script
-            PartMouth charaMouth = cHara.GetMouth();
+        PartMouth charaMouth = cHara.GetMouth();
             // Common.DebugLog(cHara.GetName() + "charaMouth " + charaMouth.GetDisplayName()); //need to add GetDisplayName();
             if (charaMouth != null)
             {
@@ -89,7 +88,6 @@ public class CanvasFaceScript : MonoBehaviour
                     mouth.sprite = sp.Result;
                 };
             }
-        }
     }
 
     private void Update()
