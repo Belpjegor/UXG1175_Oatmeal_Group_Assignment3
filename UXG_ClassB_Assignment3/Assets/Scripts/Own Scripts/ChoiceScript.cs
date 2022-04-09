@@ -15,6 +15,7 @@ public class ChoiceScript : MonoBehaviour
   public void QingChoiceSelection(){
       TextBox.GetComponent<Text>().text = "Okay do you want my nose, face, left eye, right eye or mouth?";
       ChoiceMade=1;
+
   }
 
     public void SekiChoiceSelection(){

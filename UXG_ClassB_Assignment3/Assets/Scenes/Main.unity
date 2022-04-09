@@ -1212,6 +1212,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &537262028 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6897342176991626832, guid: caa17fee52688e84ab17ac32b79c9c5d, type: 3}
+  m_PrefabInstance: {fileID: 6897342177015681422}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 514416c4a18c1c649830ddda13efed02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &556592605
 GameObject:
   m_ObjectHideFlags: 0
@@ -3250,6 +3261,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 11500000, guid: 4554a5b0cfd301142bf02a6b93597bdb, type: 3}
+        m_TargetAssemblyTypeName: ChoiceScript, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1564249280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3588,6 +3611,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1721646720}
   - component: {fileID: 1721646718}
+  - component: {fileID: 1721646719}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -3612,6 +3636,21 @@ MonoBehaviour:
   ChoiceSeki: {fileID: 1650323379}
   ChoiceAzure: {fileID: 211520643}
   ChoiceMade: 0
+--- !u!114 &1721646719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721646717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4554a5b0cfd301142bf02a6b93597bdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialoguText: {fileID: 0}
+  speakerName: {fileID: 0}
+  speakerFace: {fileID: 537262028}
 --- !u!4 &1721646720
 Transform:
   m_ObjectHideFlags: 0

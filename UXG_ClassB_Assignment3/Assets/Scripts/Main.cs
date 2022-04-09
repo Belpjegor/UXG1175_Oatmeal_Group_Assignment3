@@ -51,12 +51,12 @@ private TypeStates typestate;
             //set player's character
             Game.GetPlayer().SetPlayerCharacter("1");
 
-            // StartNewDay();
+            //StartNewDay();
             Debug.Log("dffdfd");
         }
         
 
-        // StartCoroutine(OverlayLoader.LoadSceneCo("DialoguePanel"));
+        //StartCoroutine(OverlayLoader.LoadSceneCo("DialoguePanel"));
     }
 
     public void RandomiseFaceParts(List<FacePart> faceParts, List<Character> characters)
