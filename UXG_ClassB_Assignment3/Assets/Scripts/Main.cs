@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -34,7 +35,6 @@ private TypeStates typestate;
         //TODO: Game starts here
         // Player player = Game.GetPlayer();
 
-        // RandomiseFaceParts(Game.GetPartList(), Game.GetCharacterList());
         if (charaSelect)
         {
             //clear player's character
@@ -54,29 +54,50 @@ private TypeStates typestate;
             //StartNewDay();
             Debug.Log("dffdfd");
         }
-        
+
 
         //StartCoroutine(OverlayLoader.LoadSceneCo("DialoguePanel"));
+
+        RandomiseFaceParts(Game.GetPartListByType(PartType.SHAPE), Game.GetCharacterList());// Game.GetPartList(), Game.GetCharacterList());
     }
 
-    public void RandomiseFaceParts(List<FacePart> faceParts, List<Character> characters)
+    public void RandomiseFaceParts(List<FacePart> shapeList, List<Character> characters)
     {
-        List<int> rShapeList = Common.GetRandomIntList(4, 4);
-        List<int> rEyeList = Common.GetRandomIntList(4, 4);
-        List<int> rNoseList = Common.GetRandomIntList(4, 4);
-        List<int> rMouthList = Common.GetRandomIntList(4, 4);
+        //List<PartShape> shapeList = new List<PartShape>(); // new list for Shape
 
-        faceParts[rShapeList[0]].GetPartName();
-        faceParts[rEyeList[0] + 4].GetPartName();
-        faceParts[rNoseList[0] + 8].GetPartName();
-        faceParts[rMouthList[0] + 12].GetPartName();
+        //List<PartEyes> eyesList = new List<PartEyes>(); // new list for Eyes
 
-        for (int fParts = 3; fParts >= 0; fParts--)
+        //List<int> rEyeList = Common.GetRandomIntList(4, 4);
+     //   List<int> rNoseList = Common.GetRandomIntList(4, 4);
+      //  List<int> rMouthList = Common.GetRandomIntList(4, 4);
+
+      //  faceParts[rEyeList[0] + 4].GetPartName();
+      //  faceParts[rNoseList[0] + 8].GetPartName();
+      //  faceParts[rMouthList[0] + 12].GetPartName();
+
+        for (int i = 0; i < characters.Count; i++)
         {
-            characters[fParts].SetShape(faceParts[rShapeList[fParts]] as PartShape);
-            characters[fParts].SetEyes(faceParts[rEyeList[fParts]] as PartEyes);
-            characters[fParts].SetNose(faceParts[rNoseList[fParts]] as PartNose);
-            characters[fParts].SetMouth(faceParts[rMouthList[fParts]] as PartMouth);
+            shapeList.Add(characters[i].GetShape()); //THIS return NULL VALUE !!
+            List<FacePart> rShapeList = Common.GetRandomList(shapeList, shapeList.Count);
+
+            //string randomisedShapeList = faceParts[rShapeList[i]].GetPartName();//This return a string value 
+
+            //shapeList.Add(randomisedShapeList); //THIS DON WORK.... string cant covert to class!?!?!?!?
+
+            characters[i].SetShape(rShapeList[i] as PartShape);//set random values in characters
+
+            //Debug.Log(rShapeList);
+
+            //Debug.Log(randomisedShapeList);
+
+            //characters[i].SetEyes(eyesList[i]);
+            //characters[i].SetNose(faceParts[rNoseList[i]] as PartNose);
+            //characters[i].SetMouth(faceParts[rMouthList[i]] as PartMouth);
+        }
+
+        foreach (PartShape value in shapeList)
+        {
+            Debug.Log(value);
         }
     }
 

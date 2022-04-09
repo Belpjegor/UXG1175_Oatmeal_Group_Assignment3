@@ -75,30 +75,21 @@ public static class Game
 
    // public static List<FacePart> 
 
-    public static List<FacePart>GetPartListByType(PartType aType) 
+    public static List<FacePart> GetPartListByType(PartType aType) 
     {
-        List<FacePart> filterList = new List<FacePart>();
+        List<FacePart> givenList = new List<FacePart>(); //make new list
 
-        foreach (FacePart item in partList)
+        foreach (FacePart item in partList) //scan list
         {
-            if (item.GetPartType() == aType)
+            if (item.GetPartType() == aType) //if same
             {
-                filterList.Add(item);
+                givenList.Add(item); //dump scan list item into new list
             }
-            return filterList;
-
+        }
+        return givenList; //return new list
     }
    
-  
-   
-   
-    //List<FacePart> allfaceParts, List<Character> characters)
-
-   
-   
-   
-   
-   
+    //List<FacePart> allfaceParts, List<Character> characters) 
    #endregion Face Part
 
     #region Character
