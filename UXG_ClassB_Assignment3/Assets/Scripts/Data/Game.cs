@@ -11,6 +11,10 @@ public static class Game
 
     //Game Data
     private static List<FacePart> partList;
+    private static List<FacePart> noseList;
+    private static List<FacePart> eyesList;
+    private static List<FacePart> mouthList;
+    private static List<FacePart> shapeList;
     private static List<Character> characterList;
 
     public static bool CheckIsLoaded()
@@ -69,7 +73,33 @@ public static class Game
     //     // return partList.Find(x => x.GetRefId() == aRefId);
     // }
 
-    #endregion Face Part
+   // public static List<FacePart> 
+
+    public static List<FacePart>GetPartListByType(PartType aType) 
+    {
+        List<FacePart> filterList = new List<FacePart>();
+
+        foreach (FacePart item in partList)
+        {
+            if (item.GetPartType() == aType)
+            {
+                filterList.Add(item);
+            }
+            return filterList;
+
+    }
+   
+  
+   
+   
+    //List<FacePart> allfaceParts, List<Character> characters)
+
+   
+   
+   
+   
+   
+   #endregion Face Part
 
     #region Character
 
