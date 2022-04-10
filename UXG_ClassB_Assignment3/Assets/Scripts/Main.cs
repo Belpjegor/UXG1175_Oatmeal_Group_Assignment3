@@ -19,17 +19,17 @@ public class Main : MonoBehaviour
     public bool usePrices;
     private bool chatting  = false;
 
-    private List<Character> charas;
-    private List<FacePart> allFaceParts;
-    private List<FacePart> faceShape;
-    private List<FacePart> faceEyes;
-    private List<FacePart> faceNose;
-    private List<FacePart> faceMouth;
+    //private List<Character> charas;
+    //private List<FacePart> allFaceParts;
+    //private List<FacePart> faceShape;
+    //private List<FacePart> faceEyes;
+    //private List<FacePart> faceNose;
+    //private List<FacePart> faceMouth;
 
-    List<FacePart> anyFaceShape;
-    List<FacePart> anyFaceEyes;
-    List<FacePart> anyFaceNose;
-    List<FacePart> anyFaceMouth;
+    //List<FacePart> anyFaceShape;
+    //List<FacePart> anyFaceEyes;
+    //List<FacePart> anyFaceNose;
+    //List<FacePart> anyFaceMouth;
 
 //private TypeStates typestate;
 
@@ -87,37 +87,37 @@ public class Main : MonoBehaviour
         //  faceParts[rNoseList[0] + 8].GetPartName();
         //  faceParts[rMouthList[0] + 12].GetPartName();
 
-        //for (int i = 0; i < characters.Count; i++)
-        //{
-        //    shapeList.Add(characters[i].GetShape()); //THIS return NULL VALUE !!
-        //    List<FacePart> rShapeList = Common.GetRandomList(shapeList, shapeList.Count);
-
-        //    //string randomisedShapeList = faceParts[rShapeList[i]].GetPartName();//This return a string value 
-
-        //    //shapeList.Add(randomisedShapeList); //THIS DON WORK.... string cant covert to class!?!?!?!?
-
-        //    characters[i].SetShape(rShapeList[i] as PartShape);//set random values in characters
-
-        //    //Debug.Log(rShapeList);
-
-        //    //Debug.Log(randomisedShapeList);
-
-        //    //characters[i].SetEyes(eyesList[i]);
-        //    //characters[i].SetNose(faceParts[rNoseList[i]] as PartNose);
-        //    //characters[i].SetMouth(faceParts[rMouthList[i]] as PartMouth);
-        //}
-
-        //foreach (PartShape value in shapeList)
-        //{
-        //    Debug.Log(value);
-        //}
-
-        allFaceParts = Game.GetPartList();
-
-        foreach (FacePart part in allFaceParts)
+        for (int i = 0; i < characters.Count; i++)
         {
-            //if (Game.GetPartListByType == )
+            shapeList.Add(characters[i].GetShape()); //THIS return NULL VALUE !!
+            List<FacePart> rShapeList = Common.GetRandomList(shapeList, shapeList.Count);
+
+            //string randomisedShapeList = faceParts[rShapeList[i]].GetPartName();//This return a string value 
+
+            //shapeList.Add(randomisedShapeList); //THIS DON WORK.... string cant covert to class!?!?!?!?
+
+            characters[i].SetShape(rShapeList[i] as PartShape);//set random values in characters
+
+            //Debug.Log(rShapeList);
+
+            //Debug.Log(randomisedShapeList);
+
+            //characters[i].SetEyes(eyesList[i]);
+            //characters[i].SetNose(faceParts[rNoseList[i]] as PartNose);
+            //characters[i].SetMouth(faceParts[rMouthList[i]] as PartMouth);
         }
+
+        foreach (PartShape value in shapeList)
+        {
+            Debug.Log(value);
+        }
+
+        //allFaceParts = Game.GetPartList();
+
+        //foreach (FacePart part in allFaceParts)
+        //{
+        //    if (Game.GetPartListByType == )
+        //}
 
     }
 
