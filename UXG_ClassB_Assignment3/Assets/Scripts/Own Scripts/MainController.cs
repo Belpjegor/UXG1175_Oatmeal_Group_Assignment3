@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Test : MonoBehaviour
+public class MainController : MonoBehaviour
 {
     public Button nextDayButton;
 
@@ -28,6 +28,8 @@ public class Test : MonoBehaviour
     {
         Randomising();
         SetRandomValueIntoCharacters();
+
+        nextDayButton.onClick.AddListener(NextDayButton);
     }
 
     public void Randomising()
@@ -45,7 +47,7 @@ public class Test : MonoBehaviour
 
     void SetRandomValueIntoCharacters()
     {
-        for (int i=0; i < characters.Count; i++)
+        for (int i = 0; i < characters.Count; i++)
         {
             if (characters[i].GetShape() == null)
             {
@@ -69,18 +71,18 @@ public class Test : MonoBehaviour
         }
     }
 
-    public void NextDayButton()
+     void NextDayButton()
     {
         Randomising();
         for (int i = 0; i < characters.Count; i++)
         {
-                characters[i].SetShape(randomPartShape[i] as PartShape);
+            characters[i].SetShape(randomPartShape[i] as PartShape);
 
-                characters[i].SetEyes(randomPartEyes[i] as PartEyes);
+            characters[i].SetEyes(randomPartEyes[i] as PartEyes);
 
-                characters[i].SetNose(randomPartNose[i] as PartNose);
- 
-                characters[i].SetMouth(randomPartMouth[i] as PartMouth);  
+            characters[i].SetNose(randomPartNose[i] as PartNose);
+
+            characters[i].SetMouth(randomPartMouth[i] as PartMouth);
         }
     }
 }

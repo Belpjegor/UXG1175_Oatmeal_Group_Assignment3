@@ -579,7 +579,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 338017606}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a9cce307b920d54ca167eb2a4bd72a4, type: 3}
+  m_Script: {fileID: 11500000, guid: 7832ff865727f4e4a8de6a835069fc02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   nextDayButton: {fileID: 454102784}
@@ -881,7 +881,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 338017607}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Test, Assembly-CSharp
         m_MethodName: NextDayButton
         m_Mode: 1
