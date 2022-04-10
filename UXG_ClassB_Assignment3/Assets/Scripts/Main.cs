@@ -77,7 +77,7 @@ public class Main : MonoBehaviour
         for (int i = 0; i < 4; i++)
         {
             string randomisedShapeList = faceParts[rShapeList[i]].GetPartName();//This return a string value 
-            shapeList.Add(randomisedShapeList); //THIS DON WORK.... string cant covert to class!?!?!?!?
+            //shapeList.Add(randomisedShapeList); //THIS DON WORK.... string cant covert to class!?!?!?!?
 
             characters[i].SetShape(shapeList[i]);//set random values in characters
 

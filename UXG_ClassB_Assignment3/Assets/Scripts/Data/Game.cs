@@ -73,9 +73,9 @@ public static class Game
     //     // return partList.Find(x => x.GetRefId() == aRefId);
     // }
 
-   // public static List<FacePart> 
+    // public static List<FacePart> 
 
-    public static List<FacePart> GetPartListByType(PartType aType) 
+    public static List<FacePart> GetPartListByType(PartType aType)
     {
         List<FacePart> givenList = new List<FacePart>(); //make new list
 
