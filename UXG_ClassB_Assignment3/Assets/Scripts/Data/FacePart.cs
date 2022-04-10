@@ -37,6 +37,15 @@ public class FacePart
     {
         return partType;
     }
+
+    public static string GetFacePartByRefId(FacePart classValue)
+    {
+        string convertedStringValue;
+
+        convertedStringValue = classValue.ToString();
+
+        return convertedStringValue;
+    }
 }
 
 

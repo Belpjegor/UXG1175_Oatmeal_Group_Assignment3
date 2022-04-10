@@ -19,18 +19,6 @@ public class Main : MonoBehaviour
     public bool usePrices;
     private bool chatting  = false;
 
-    //private List<Character> charas;
-    //private List<FacePart> allFaceParts;
-    //private List<FacePart> faceShape;
-    //private List<FacePart> faceEyes;
-    //private List<FacePart> faceNose;
-    //private List<FacePart> faceMouth;
-
-    //List<FacePart> anyFaceShape;
-    //List<FacePart> anyFaceEyes;
-    //List<FacePart> anyFaceNose;
-    //List<FacePart> anyFaceMouth;
-
 //private TypeStates typestate;
 
     // Start is called before the first frame update
@@ -64,19 +52,18 @@ public class Main : MonoBehaviour
             Game.GetPlayer().SetPlayerCharacter("1");
 
             //StartNewDay();
-            Debug.Log("dffdfd");
+            //Debug.Log("dffdfd");
         }
-
 
         //StartCoroutine(OverlayLoader.LoadSceneCo("DialoguePanel"));
 
-        RandomiseFaceParts(Game.GetPartListByType(PartType.SHAPE), Game.GetCharacterList());// Game.GetPartList(), Game.GetCharacterList());
+         RandomiseFaceParts( Game.GetPartList(), Game.GetCharacterList());
     }
 
-    public void RandomiseFaceParts(List<FacePart> shapeList, List<Character> characters)
+    public void RandomiseFaceParts(List<FacePart> faceParts, List<Character> characters)
     {
-        //List<PartShape> shapeList = new List<PartShape>(); // new list for Shape
-
+        List<string> shapeList = new List<string>(); // new list for Shape
+        List<int> rShapeList = Common.GetRandomIntList(4, 4);
         //List<PartEyes> eyesList = new List<PartEyes>(); // new list for Eyes
 
         //List<int> rEyeList = Common.GetRandomIntList(4, 4);
@@ -87,46 +74,25 @@ public class Main : MonoBehaviour
         //  faceParts[rNoseList[0] + 8].GetPartName();
         //  faceParts[rMouthList[0] + 12].GetPartName();
 
-        for (int i = 0; i < characters.Count; i++)
+        for (int i = 0; i < 4; i++)
         {
-            shapeList.Add(characters[i].GetShape()); //THIS return NULL VALUE !!
-            List<FacePart> rShapeList = Common.GetRandomList(shapeList, shapeList.Count);
+            string randomisedShapeList = faceParts[rShapeList[i]].GetPartName();//This return a string value 
+            shapeList.Add(randomisedShapeList); //THIS DON WORK.... string cant covert to class!?!?!?!?
 
-            //string randomisedShapeList = faceParts[rShapeList[i]].GetPartName();//This return a string value 
-
-            //shapeList.Add(randomisedShapeList); //THIS DON WORK.... string cant covert to class!?!?!?!?
-
-            characters[i].SetShape(rShapeList[i] as PartShape);//set random values in characters
-
-            //Debug.Log(rShapeList);
-
-            //Debug.Log(randomisedShapeList);
+            //characters[i].SetShape(rShapeList[i] as PartShape);//set random values in characters
 
             //characters[i].SetEyes(eyesList[i]);
             //characters[i].SetNose(faceParts[rNoseList[i]] as PartNose);
             //characters[i].SetMouth(faceParts[rMouthList[i]] as PartMouth);
         }
-
-        foreach (PartShape value in shapeList)
-        {
-            Debug.Log(value);
-        }
-
-        //allFaceParts = Game.GetPartList();
-
-        //foreach (FacePart part in allFaceParts)
-        //{
-        //    if (Game.GetPartListByType == )
-        //}
-
     }
 
     void Update()
     {
-         //detect inventory key
-            // if (Input.GetKeyDown(KeyCode.Mouse0)) ToggleInventory();
-            //  detect inventory key
-            // if (Input.GetMouseButtonDown(0)) ToggleInventory();
+        //detect inventory key
+        // if (Input.GetKeyDown(KeyCode.Mouse0)) ToggleInventory();
+        //  detect inventory key
+        // if (Input.GetMouseButtonDown(0)) ToggleInventory();
 
         if (Input.GetMouseButtonDown(0)) //if !isChatting
         {

@@ -44,3 +44,9 @@ TagManager:
   - name: UI
     uniqueID: 3506671915
     locked: 0
+  - name: Background
+    uniqueID: 3727966967
+    locked: 0
+  - name: Face Items
+    uniqueID: 532422779
+    locked: 0
