@@ -62,7 +62,7 @@ public class Main : MonoBehaviour
 
     public void RandomiseFaceParts(List<FacePart> faceParts, List<Character> characters)
     {
-        List<string> shapeList = new List<string>(); // new list for Shape
+        List<PartShape> shapeList = new List<PartShape>(); // new list for Shape
         List<int> rShapeList = Common.GetRandomIntList(4, 4);
         //List<PartEyes> eyesList = new List<PartEyes>(); // new list for Eyes
 
@@ -79,7 +79,7 @@ public class Main : MonoBehaviour
             string randomisedShapeList = faceParts[rShapeList[i]].GetPartName();//This return a string value 
             shapeList.Add(randomisedShapeList); //THIS DON WORK.... string cant covert to class!?!?!?!?
 
-            //characters[i].SetShape(rShapeList[i] as PartShape);//set random values in characters
+            characters[i].SetShape(shapeList[i]);//set random values in characters
 
             //characters[i].SetEyes(eyesList[i]);
             //characters[i].SetNose(faceParts[rNoseList[i]] as PartNose);
