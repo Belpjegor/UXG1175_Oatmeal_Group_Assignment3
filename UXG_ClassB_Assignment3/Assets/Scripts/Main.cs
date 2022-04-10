@@ -7,19 +7,31 @@ using UnityEngine.UI;
 
 public class Main : MonoBehaviour
 {
-public OverlayLoader loader;
+    public OverlayLoader loader;
 
-private bool isInventoryOpen = false;
+    private bool isInventoryOpen = false;
 
-public Text label;
-public bool charaSelect;
+    public Text label;
+    public bool charaSelect;
 
-public bool doPartPreferences;
-public bool showPartPreferences;
-public bool usePrices;
-private bool chatting  = false;
+    public bool doPartPreferences;
+    public bool showPartPreferences;
+    public bool usePrices;
+    private bool chatting  = false;
 
-private TypeStates typestate;
+    private List<Character> charas;
+    private List<FacePart> allFaceParts;
+    private List<FacePart> faceShape;
+    private List<FacePart> faceEyes;
+    private List<FacePart> faceNose;
+    private List<FacePart> faceMouth;
+
+    List<FacePart> anyFaceShape;
+    List<FacePart> anyFaceEyes;
+    List<FacePart> anyFaceNose;
+    List<FacePart> anyFaceMouth;
+
+//private TypeStates typestate;
 
     // Start is called before the first frame update
     void Start()
@@ -68,37 +80,45 @@ private TypeStates typestate;
         //List<PartEyes> eyesList = new List<PartEyes>(); // new list for Eyes
 
         //List<int> rEyeList = Common.GetRandomIntList(4, 4);
-     //   List<int> rNoseList = Common.GetRandomIntList(4, 4);
-      //  List<int> rMouthList = Common.GetRandomIntList(4, 4);
+        //   List<int> rNoseList = Common.GetRandomIntList(4, 4);
+        //  List<int> rMouthList = Common.GetRandomIntList(4, 4);
 
-      //  faceParts[rEyeList[0] + 4].GetPartName();
-      //  faceParts[rNoseList[0] + 8].GetPartName();
-      //  faceParts[rMouthList[0] + 12].GetPartName();
+        //  faceParts[rEyeList[0] + 4].GetPartName();
+        //  faceParts[rNoseList[0] + 8].GetPartName();
+        //  faceParts[rMouthList[0] + 12].GetPartName();
 
-        for (int i = 0; i < characters.Count; i++)
+        //for (int i = 0; i < characters.Count; i++)
+        //{
+        //    shapeList.Add(characters[i].GetShape()); //THIS return NULL VALUE !!
+        //    List<FacePart> rShapeList = Common.GetRandomList(shapeList, shapeList.Count);
+
+        //    //string randomisedShapeList = faceParts[rShapeList[i]].GetPartName();//This return a string value 
+
+        //    //shapeList.Add(randomisedShapeList); //THIS DON WORK.... string cant covert to class!?!?!?!?
+
+        //    characters[i].SetShape(rShapeList[i] as PartShape);//set random values in characters
+
+        //    //Debug.Log(rShapeList);
+
+        //    //Debug.Log(randomisedShapeList);
+
+        //    //characters[i].SetEyes(eyesList[i]);
+        //    //characters[i].SetNose(faceParts[rNoseList[i]] as PartNose);
+        //    //characters[i].SetMouth(faceParts[rMouthList[i]] as PartMouth);
+        //}
+
+        //foreach (PartShape value in shapeList)
+        //{
+        //    Debug.Log(value);
+        //}
+
+        allFaceParts = Game.GetPartList();
+
+        foreach (FacePart part in allFaceParts)
         {
-            shapeList.Add(characters[i].GetShape()); //THIS return NULL VALUE !!
-            List<FacePart> rShapeList = Common.GetRandomList(shapeList, shapeList.Count);
-
-            //string randomisedShapeList = faceParts[rShapeList[i]].GetPartName();//This return a string value 
-
-            //shapeList.Add(randomisedShapeList); //THIS DON WORK.... string cant covert to class!?!?!?!?
-
-            characters[i].SetShape(rShapeList[i] as PartShape);//set random values in characters
-
-            //Debug.Log(rShapeList);
-
-            //Debug.Log(randomisedShapeList);
-
-            //characters[i].SetEyes(eyesList[i]);
-            //characters[i].SetNose(faceParts[rNoseList[i]] as PartNose);
-            //characters[i].SetMouth(faceParts[rMouthList[i]] as PartMouth);
+            //if (Game.GetPartListByType == )
         }
 
-        foreach (PartShape value in shapeList)
-        {
-            Debug.Log(value);
-        }
     }
 
     void Update()
@@ -120,12 +140,12 @@ private TypeStates typestate;
         }
     }
 
-    public void SetTypeStates(TypeStates aState, params string[] paramList)
-    {
-        typestate = aState;
-        Common.DebugLog("SetTypeStates " + typestate);
-        typestate.InitialiseStates(this, paramList);
-    }
+    //public void SetTypeStates(TypeStates aState, params string[] paramList)
+    //{
+    //    typestate = aState;
+    //    Common.DebugLog("SetTypeStates " + typestate);
+    //    typestate.InitialiseStates(this, paramList);
+    //}
 
     public void UpdateFaces()
     {
