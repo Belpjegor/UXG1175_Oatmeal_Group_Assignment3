@@ -54,37 +54,6 @@ public class Main : MonoBehaviour
             //StartNewDay();
             //Debug.Log("dffdfd");
         }
-
-        //StartCoroutine(OverlayLoader.LoadSceneCo("DialoguePanel"));
-
-         RandomiseFaceParts( Game.GetPartList(), Game.GetCharacterList());
-    }
-
-    public void RandomiseFaceParts(List<FacePart> faceParts, List<Character> characters)
-    {
-        List<PartShape> shapeList = new List<PartShape>(); // new list for Shape
-        List<int> rShapeList = Common.GetRandomIntList(4, 4);
-        //List<PartEyes> eyesList = new List<PartEyes>(); // new list for Eyes
-
-        //List<int> rEyeList = Common.GetRandomIntList(4, 4);
-        //   List<int> rNoseList = Common.GetRandomIntList(4, 4);
-        //  List<int> rMouthList = Common.GetRandomIntList(4, 4);
-
-        //  faceParts[rEyeList[0] + 4].GetPartName();
-        //  faceParts[rNoseList[0] + 8].GetPartName();
-        //  faceParts[rMouthList[0] + 12].GetPartName();
-
-        for (int i = 0; i < 4; i++)
-        {
-            string randomisedShapeList = faceParts[rShapeList[i]].GetPartName();//This return a string value 
-            //shapeList.Add(randomisedShapeList); //THIS DON WORK.... string cant covert to class!?!?!?!?
-
-            characters[i].SetShape(shapeList[i]);//set random values in characters
-
-            //characters[i].SetEyes(eyesList[i]);
-            //characters[i].SetNose(faceParts[rNoseList[i]] as PartNose);
-            //characters[i].SetMouth(faceParts[rMouthList[i]] as PartMouth);
-        }
     }
 
     void Update()

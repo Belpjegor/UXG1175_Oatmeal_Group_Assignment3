@@ -17,7 +17,7 @@ public class DialoguePanel : MonoBehaviour
   {
       mScript = aScript;
 
-      speakerName.text = speakerChar.GetName();
+        speakerName.text = speakerChar.GetName();
       //speakerFace.SetFace(speakerChar);
 
       linelist = aLineList;
@@ -45,7 +45,4 @@ public class DialoguePanel : MonoBehaviour
       currentIndex += 1;
       ShowCurrentLine();
   }
-
-
-
 }

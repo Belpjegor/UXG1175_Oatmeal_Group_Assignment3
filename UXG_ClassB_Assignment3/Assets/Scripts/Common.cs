@@ -97,4 +97,17 @@ public static class Common
 
         return randomList;
     }
+
+   /* public static List<PartType> RandomisingList(List<PartType> partTypes)
+    {
+        List<PartType> newRandomValue = new List<PartType>(); //new list
+
+        List<PartType> _rValue = GetRandomList(partTypes, partTypes.Count); //make a list of random value
+
+        for(int i=0; i < partTypes.Count; i++)
+        {
+
+        }
+
+    }*/
 }

@@ -7,7 +7,9 @@ using UnityEngine.UI;
 
 public class CanvasFaceScript : MonoBehaviour
 {
-    public string charaRefID;
+    List<Character> characters;
+
+    public int charaRefID;
 
     public Image faceShape;
     public Image leftEye;
@@ -89,6 +91,10 @@ public class CanvasFaceScript : MonoBehaviour
                 };
             }
     }
+    private void Awake()
+    {
+        characters = Game.GetCharacterList();
+    }
 
     private void Update()
     {
@@ -101,5 +107,7 @@ public class CanvasFaceScript : MonoBehaviour
         {
             Common.DebugLog("face" + progress);
         }
+
+        SetCharaFace(characters[charaRefID]);
     }
 }

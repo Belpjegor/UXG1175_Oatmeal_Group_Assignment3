@@ -29,6 +29,10 @@ MonoBehaviour:
     m_Address: Assets/Data/RefData.txt
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 82cfe169057269f488ea5651d9ec3646
+    m_Address: Assets/Images
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: ecd563f3d789dc342bb232108d76e927, type: 2}
   m_SchemaSet:
