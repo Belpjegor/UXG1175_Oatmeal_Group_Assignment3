@@ -35,7 +35,7 @@ public class ChoiceScript : MonoBehaviour
         seki.SetActive(false);
         azure.SetActive(false);
 
-        ChoiceMade = 1;
+        ChoiceMade =0;
 
         ChoiceQing.SetActive(false);
         ChoiceSeki.SetActive(false);
@@ -57,7 +57,7 @@ public class ChoiceScript : MonoBehaviour
         qing.SetActive(false);
         azure.SetActive(false);
 
-        ChoiceMade =2;
+        ChoiceMade = 1;
 
         ChoiceQing.SetActive(false);
         ChoiceSeki.SetActive(false);
@@ -79,7 +79,7 @@ public class ChoiceScript : MonoBehaviour
         seki.SetActive(false);
         qing.SetActive(false);
 
-        ChoiceMade =3;
+        ChoiceMade = 2;
 
         ChoiceQing.SetActive(false);
         ChoiceSeki.SetActive(false);

@@ -71,7 +71,7 @@ public class MainController : MonoBehaviour
         }
     }
 
-     void NextDayButton()
+    void NextDayButton()
     {
         Randomising();
         for (int i = 0; i < characters.Count; i++)

@@ -2,17 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PartsTrading : MonoBehaviour
+public static class PartsTrading
 {
-    // Start is called before the first frame update
-    void Start()
+    public static List<string> tradingCharacter;
+    public static List<string> tradingValue = new List<string> { "Face", "Eyes", "Nose", "Mouth" };
+
+    public static List<string> GetTradingChara(List<Character> tradingCharaters)
     {
-        
+        List<string> givenList = new List<string>();
+
+        foreach (Character chara in tradingCharaters)
+        {
+            if (chara != tradingCharaters[0])
+            {
+                givenList.Add(chara.GetName());
+            }
+        }
+
+        return givenList;
     }
 
-    // Update is called once per frame
-    void Update()
+    public static string GetTradingChara(int value)
     {
-        
+        return tradingValue[value];
     }
 }
