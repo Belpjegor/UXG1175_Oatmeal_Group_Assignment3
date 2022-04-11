@@ -1,62 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Trading : MonoBehaviour
 {
-    private Main mainScript;
-    private Dictionary<int, PartType> optionList;
+    List<Character> charas;
+    public LikeListController prefControl;
 
-    private string tradingCharaRefID;
+    public TextMeshProUGUI LikeTextBox;
+    public TextMeshProUGUI dislikeBox;
 
-    public void StartIntialisingState(Main mScript, params string[] paramList)
+    void Start()
     {
-        mainScript = mScript;
-        tradingCharaRefID = paramList[0];
-    }
+        charas = Game.GetCharacterList();
+        //charas.GetLikeList();
+        //charas.GetDislikeList();
 
-    public void HandleInput(int inputA)
-    {
-        switch (inputA)
+        for (int i = 0; i < 4; i++)
         {
-            case 9:
-            {
-                //refresh
-                mainScript.RefreshTextDisplay("Wait awhile.");
-            }
-            break;
-
-            case 8:
-            {
-                //chatting
-                Character tradeChara = Game.GetCharacter(tradingCharaRefID);
-                // mainScript.SetState(true); //no SetState (could be a different name)
-                
-                AssetManager.LoadUIAsset("DialoguePanel", Vector3.zero, mainScript.transform.parent, (panel) =>
-                {
-                    // panel.GetComponent<DialoguePanel>().SetDialogue(tradeChara, mainScript.GenerateParts(tradeChara), mScript); //mSciript not in context??
-                    panel.GetComponent<RectTransform>().localPosition = Vector3.zero;
-                });
-                mainScript.RefreshTextDisplay(string.Format("You chat with {0}.", tradeChara.GetName()));
-                break;
-            }
-
-            case 0:
-            {
-                //go back
-                // mainScript.SetTypeStates(new MainState());
-                mainScript.RefreshTextDisplay("");
-            }
-            break;
-
-            // default:  //error: Control cannot fall out of switch from final case label ('default:')
-            // {
-            //     if (optionList.ContainsKey(inputA))
-            //     {
-            //         mainScript.SetTypeStates(new ConfirmState(), tradingCharaRefID, optionList[inputA].ToString());
-            //         mainScript.RefreshTextDisplay("");
-            //     }
-            // }
+            Debug.Log("show like");
+            prefControl.Preferences();
+            LikeTextBox.text = charas[i].GetLikeList();
+            Debug.Log("show dislike");
+            dislikeBox.text = charas[i].GetDislikeList();
         }
+
+        //LikeTextBox.text = charas.GetLikeList();
+        //disLikeTextBox.text = charas.GetDislikeList();
     }
 }

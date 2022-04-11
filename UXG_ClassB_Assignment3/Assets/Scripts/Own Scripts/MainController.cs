@@ -84,5 +84,6 @@ public class MainController : MonoBehaviour
 
             characters[i].SetMouth(randomPartMouth[i] as PartMouth);
         }
+
     }
 }

@@ -16,10 +16,9 @@ public class Character
     private PartMouth charaMouth;
 
     //Secondary Task: generating preferences
-    private List<string> likeList;
-    private List<string> dislikeList;
-    private List<string> likeCombo;
-    private List<string> dislikeCombo;
+    private string likeList;
+    private string dislikeList;
+
 
     public Character (string refId, string name, Color colour)
     {
@@ -32,10 +31,8 @@ public class Character
         charaNose = null;
         charaMouth = null;
 
-        likeList = new List<string>();
-        dislikeList = new List<string>();
-        likeCombo = new List<string>();
-        dislikeCombo = new List<string>();
+        likeList = null;
+        dislikeList = null;
     }
 
     public string GetRefId()
@@ -113,5 +110,25 @@ public class Character
     public bool CheckHasPart(string aRefId)
     {
         return charaShape.GetRefId() == aRefId || charaEyes.GetRefId() == aRefId || charaNose.GetRefId() == aRefId || charaMouth.GetRefId() == aRefId;
+    }
+
+    public void SetLikeList(string aLList)
+    {
+        likeList = aLList;
+    }
+
+    public string GetLikeList()
+    {
+        return likeList;
+    }
+
+    public void SetDislikeList(string aDList)
+    {
+        dislikeList = aDList;
+    }
+
+    public string GetDislikeList()
+    {
+        return dislikeList;
     }
 }

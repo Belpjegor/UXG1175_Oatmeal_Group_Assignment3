@@ -86,6 +86,13 @@ public static class Game
         }
         return givenList; //return new list
     }
+
+    public static List<FacePart> GetPartListByName(string aName)
+    {
+        List<FacePart> nameList = new List<FacePart>();
+
+        return nameList;
+    }
    
     //List<FacePart> allfaceParts, List<Character> characters) 
    #endregion Face Part
