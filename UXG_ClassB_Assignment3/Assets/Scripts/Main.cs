@@ -119,22 +119,9 @@ public class Main : MonoBehaviour, IdataPersistence
         chatting = isChatting;
     }
 
-
-    // private void ToggleInventory()
-    //     {
-    //         if (isInventoryOpen)
-    //         {
-    //             //close inventory
-    //             StartCoroutine(OverlayLoader.UnLoadSceneCo("InventoryHUD"));
-
-    //             isInventoryOpen = false;
-    //         }
-    //         else
-    //         {
-    //             //open inventory
-    //             StartCoroutine(OverlayLoader.LoadSceneCo("InventoryHUD"));
-
-    //             isInventoryOpen = true;
-    //         }
-    //     }
+    private void OnApplicationQuit()
+    {
+        SaveLoad.Load();
+    }
+    
 }
