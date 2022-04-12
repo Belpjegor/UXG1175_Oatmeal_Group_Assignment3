@@ -263,7 +263,7 @@ public class MainController : MonoBehaviour, IdataPersistence
         this.characters = data.characters;
     }
 
-    void IdataPersistence.SaveData(GameData data)
+    void IdataPersistence.SaveData(ref GameData data)
     {
         data.characters = this.characters;
     }

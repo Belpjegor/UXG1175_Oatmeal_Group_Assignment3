@@ -102,14 +102,14 @@ public class DialogueButtonController : MonoBehaviour
 
         if (value == 0)
         {
-            dialogueButtonText.Add("traded. Thank you.");
+            dialogueButtonText.Add(" traded. Thank you.");
 
             dialogueButtonText.Add("? Nice trade!");
         }
 
         if (value == 1)
         {
-            dialogueButtonText.Add("traded. Thank you young one.");
+            dialogueButtonText.Add(" traded. Thank you young one.");
 
             dialogueButtonText.Add("? I always wanted that young one!");
         }
