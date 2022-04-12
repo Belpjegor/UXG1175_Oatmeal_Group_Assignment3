@@ -12,54 +12,81 @@ public class DialogueController : MonoBehaviour
     public TextMeshProUGUI nameTextBox;
 
     public static bool isDialogue;
-
+    string Qing, Seki, Azure;
     // Update is called once per frame
     void Start()
     {
         characters = Game.GetCharacterList();
         PartsTrading.tradingCharacter = PartsTrading.GetTradingChara(characters);
 
+        Qing = PartsTrading.tradingCharacter[0];
+        Seki = PartsTrading.tradingCharacter[1];
+        Azure = PartsTrading.tradingCharacter[2];
+
+        DialogueToUse(0);
+
         if (ChoiceScript.ChoiceMade == 0)
         {
-            nameTextBox.text = PartsTrading.tradingCharacter[0];
+            nameTextBox.text = Qing;
 
-            dialogueTextBox.text = "Hi I'm Qing. Do you want my face, eyes, nose or mouth?";
+            dialogueTextBox.text = DialogueToUse(0);
         }
 
         if (ChoiceScript.ChoiceMade == 1)
         {
 
-            nameTextBox.text = PartsTrading.tradingCharacter[1];
-            dialogueTextBox.text = "HEY YOU! I'm Seki. What do you want from me? My face, eyes, nose or mouth?";
+            nameTextBox.text = Seki;
+            dialogueTextBox.text = DialogueToUse(1);
         }
 
         if (ChoiceScript.ChoiceMade == 2)
         {
-
-            nameTextBox.text = PartsTrading.tradingCharacter[2];
-            dialogueTextBox.text = "Swasdi. My name is Azure. Do you want my face, eyes, nose or mouth?";
-        }
-
-        foreach(string v in PartsTrading.tradingCharacter)
-        {
-            Debug.Log(v);
+            nameTextBox.text = Azure;
+            dialogueTextBox.text = DialogueToUse(2);
         }
     }
 
      string DialogueToUse(int value)
     {
         List<string> dialogueText = new List<string>();
+        string tchara;
 
-        dialogueText.Add("Hi I'm " + PartsTrading.tradingCharacter[value] + " . What can I trade with you today?");
+        int randomIndex = Random.Range(0, 3);
 
-        dialogueText.Add(PartsTrading.tradingCharacter[value] + " is my name. Do you want to trade with my " + PartsTrading.GetTradingChara(0) + ", " +
-                PartsTrading.GetTradingChara(1) + ", " + PartsTrading.GetTradingChara(2) + " or " + PartsTrading.GetTradingChara(3) + " ?");
+        if (value == 0)
+        {
+            tchara = Qing;
+            dialogueText.Add("Hi I'm " + tchara + ". What can I trade with you today?");
 
-        dialogueText.Add("My name is " + PartsTrading.tradingCharacter[value] + " . What do you want to trade?");
+            dialogueText.Add(tchara + " is my name. Do you want to trade with my " + PartsTrading.GetTradingChara(0) + ", " +
+                   PartsTrading.GetTradingChara(1) + ", " + PartsTrading.GetTradingChara(2) + " or " + PartsTrading.GetTradingChara(3) + " ?");
 
-        dialogueText.Add("HEY YOU! I'm " + PartsTrading.tradingCharacter[value] + " . What do you want from me?" + PartsTrading.GetTradingChara(0) + ", " +
-                PartsTrading.GetTradingChara(1) + ", " + PartsTrading.GetTradingChara(2) + " or " + PartsTrading.GetTradingChara(3) + " ?");
+            dialogueText.Add("My name is " + tchara + ". What do you want to trade?");
+        }
 
-        return null;
+        if (value == 1)
+        {
+            tchara = Seki;
+            dialogueText.Add("Hi I'm " + tchara + ". 1");
+
+            dialogueText.Add(tchara + " 2 " + PartsTrading.GetTradingChara(0) + ", " +
+                   PartsTrading.GetTradingChara(1) + ", " + PartsTrading.GetTradingChara(2) + " or " + PartsTrading.GetTradingChara(3) + " ?");
+
+            dialogueText.Add("My name is " + tchara + ". 3");
+        }
+
+        if (value == 2)
+        {
+            tchara = Azure;
+            dialogueText.Add("Hi I'm " + tchara + ". d?");
+
+            dialogueText.Add(tchara + " dd " + PartsTrading.GetTradingChara(0) + ", " +
+                   PartsTrading.GetTradingChara(1) + ", " + PartsTrading.GetTradingChara(2) + " or " + PartsTrading.GetTradingChara(3) + " ?");
+
+            dialogueText.Add("My name is " + tchara + ". ddd?");
+        }
+
+
+        return dialogueText[randomIndex];
     }
 }

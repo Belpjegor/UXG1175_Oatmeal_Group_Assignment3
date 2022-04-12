@@ -7,6 +7,8 @@ public static class PartsTrading
     public static List<string> tradingCharacter;
     public static List<string> tradingValue = new List<string> { "Face", "Eyes", "Nose", "Mouth" };
 
+    public static string tradingItem;
+
     public static List<string> GetTradingChara(List<Character> tradingCharaters)
     {
         List<string> givenList = new List<string>();

@@ -29,4 +29,16 @@ public class Trading : MonoBehaviour
         //LikeTextBox.text = charas.GetLikeList();
         //disLikeTextBox.text = charas.GetDislikeList();
     }
+    private void Update()
+    {
+        ItemTrading();
+    }
+
+    void ItemTrading()
+    {
+        if (ChoiceScript.ChoiceMade == 0 && PartsTrading.tradingItem == "Face")
+        {
+            Debug.Log(PartsTrading.tradingCharacter[0] + " "+ PartsTrading.tradingItem);
+        }
+    }
 }
