@@ -47,6 +47,7 @@ public class MainController : MonoBehaviour
         for (int i = 0; i < faceParts.Count; i++)
         {
             likeListParts.Add(faceParts[i].GetPartName());
+            dislikeListParts.Add(faceParts[i].GetPartName());
         }
 
         Randomising();
@@ -165,29 +166,22 @@ public class MainController : MonoBehaviour
 
     public static void DislikeListRandomising()
     {
-        List<string> dislikeListParts = new List<string>();
+        List<string> newDislikeListParts = new List<string>();
 
         randomDislikeParts = Common.GetRandomIntList(15, 3);
 
-        if(CheckSame(randomLikeParts, randomDislikeParts) == true)
+        for (int i = 0; i < randomDislikeParts.Count; i++)
         {
-            randomDislikeParts = Common.GetRandomIntList(15, 3);
+            newDislikeListParts.Add(dislikeListParts[randomDislikeParts[i]]);
         }
-        else
+
+        QingLike = newDislikeListParts[0];
+        SekiLike = newDislikeListParts[1];
+        AzureLike = newDislikeListParts[2];
+
+        foreach (string v in dislikeListParts)
         {
-            for (int i = 0; i < randomDislikeParts.Count; i++)
-            {
-                dislikeListParts.Add(likeListParts[randomDislikeParts[i]]);
-            }
-
-            QingDislike = dislikeListParts[0];
-            SekiDislike = dislikeListParts[1];
-            AzureDislike = dislikeListParts[2];
-
-            foreach(string v in dislikeListParts)
-            {
-                Debug.Log("Dislike dd " + v);
-            }
+            Debug.Log("Dislike dd " + v);
         }
 
         if (randomDislikeParts[0] >= 0 && randomDislikeParts[0] <= 3)
@@ -240,21 +234,6 @@ public class MainController : MonoBehaviour
         {
             dislikeItemPartsA = "Mouth: ";
         }
-    }
-
-    public static bool CheckSame(List<int> Value1, List<int> Value2)
-    {
-        foreach (int i in Value1)
-        {
-            foreach (int l in Value2)
-            {
-                if (i == l)
-                {
-                    return true;
-                }
-            }
-        }
-        return false;
     }
 
     void NextDayButton()

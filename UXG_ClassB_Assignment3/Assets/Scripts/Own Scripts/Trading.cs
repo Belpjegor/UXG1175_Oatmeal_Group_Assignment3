@@ -5,7 +5,7 @@ using TMPro;
 
 public class Trading : MonoBehaviour
 {
-    public static List<Character> characters;
+    //public static List<Character> characters;
     public LikeListController prefControl;
 
     public TextMeshProUGUI LikeTextBox;
@@ -13,27 +13,12 @@ public class Trading : MonoBehaviour
 
     void Start()
     {
-        characters = Game.GetCharacterList();
+        //characters = Game.GetCharacterList();
         //charas.GetLikeList();
         //charas.GetDislikeList();
-
-        for (int i = 0; i < 4; i++)
-        {
-           // Debug.Log("show like");
-            //prefControl.Preferences();
-            LikeTextBox.text = characters[i].GetLikeList();
-          //  Debug.Log("show dislike");
-            dislikeBox.text = characters[i].GetDislikeList();
-        }
-        //LikeTextBox.text = charas.GetLikeList();
-        //disLikeTextBox.text = charas.GetDislikeList();
-    }
-    private void Update()
-    {
-        
     }
 
-    public static void ItemTrading()
+    public static void ItemTrading(List<Character> characters)
     {
         FacePart tradingPlayerItem;
         FacePart tradingCharacterItem;

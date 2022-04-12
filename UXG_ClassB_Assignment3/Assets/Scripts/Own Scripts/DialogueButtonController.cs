@@ -5,35 +5,88 @@ using TMPro;
 
 public class DialogueButtonController : MonoBehaviour
 {
-    public TextMeshProUGUI dialogueTextBox;
+    List<Character> characters;
 
+    public TextMeshProUGUI dialogueTextBox;
+    public void Start()
+    {
+        characters = Game.GetCharacterList();
+    }
     public void FaceButton()
     {
         PartsTrading.tradingItem = PartsTrading.tradingValue[0];
-        dialogueTextBox.text = PartsTrading.GetTradingChara(0) + " it is!";
 
-        Trading.ItemTrading();
+        if (ChoiceScript.ChoiceMade == 0)
+        { 
+            dialogueTextBox.text = PartsTrading.GetTradingChara(0) + DialogueToUseButton(0); 
+        }
+        else if (ChoiceScript.ChoiceMade == 1)
+        {
+            dialogueTextBox.text = PartsTrading.GetTradingChara(0) + DialogueToUseButton(1);
+        }
+        else if (ChoiceScript.ChoiceMade == 2)
+        {
+            dialogueTextBox.text = PartsTrading.GetTradingChara(0) + DialogueToUseButton(2);
+        }
+
+        Trading.ItemTrading(characters);
     }
     public void EyeButton()
     {
         PartsTrading.tradingItem = PartsTrading.tradingValue[1];
-        dialogueTextBox.text = PartsTrading.GetTradingChara(1) + " it is!";
 
-        Trading.ItemTrading();
+        if (ChoiceScript.ChoiceMade == 0)
+        {
+            dialogueTextBox.text = PartsTrading.GetTradingChara(1) + DialogueToUseButton(0);
+        }
+        else if (ChoiceScript.ChoiceMade == 1)
+        {
+            dialogueTextBox.text = PartsTrading.GetTradingChara(1) + DialogueToUseButton(1);
+        }
+        else if (ChoiceScript.ChoiceMade == 2)
+        {
+            dialogueTextBox.text = PartsTrading.GetTradingChara(1) + DialogueToUseButton(2);
+        }
+
+        Trading.ItemTrading(characters);
     }
     public void NoseButton()
     {
         PartsTrading.tradingItem = PartsTrading.tradingValue[2];
-        dialogueTextBox.text = PartsTrading.GetTradingChara(2) + " it is!";
 
-        Trading.ItemTrading();
+        if (ChoiceScript.ChoiceMade == 0)
+        {
+            dialogueTextBox.text = PartsTrading.GetTradingChara(2) + DialogueToUseButton(0);
+        }
+        else if (ChoiceScript.ChoiceMade == 1)
+        {
+            dialogueTextBox.text = PartsTrading.GetTradingChara(2) + DialogueToUseButton(1);
+        }
+        else if (ChoiceScript.ChoiceMade == 2)
+        {
+            dialogueTextBox.text = PartsTrading.GetTradingChara(2) + DialogueToUseButton(2);
+        }
+
+        Trading.ItemTrading(characters);
     }
     public void MouthButton()
     {
         PartsTrading.tradingItem = PartsTrading.tradingValue[3];
-        dialogueTextBox.text = PartsTrading.GetTradingChara(3) + " it is!";
 
-        Trading.ItemTrading();
+        if (ChoiceScript.ChoiceMade == 0)
+        {
+            dialogueTextBox.text = PartsTrading.GetTradingChara(3) + DialogueToUseButton(0);
+        }
+        else if (ChoiceScript.ChoiceMade == 1)
+        {
+            dialogueTextBox.text = PartsTrading.GetTradingChara(3) + DialogueToUseButton(1);
+        }
+        else if (ChoiceScript.ChoiceMade == 2)
+        {
+            dialogueTextBox.text = PartsTrading.GetTradingChara(3) + DialogueToUseButton(2);
+        }
+
+        Trading.ItemTrading(characters);
     }
     public void BackToMainButton()
     {
