@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MainController : MonoBehaviour
+public class MainController : MonoBehaviour, IdataPersistence
 {
     public Button nextDayButton;
 
     List<Character> characters;
-
+    public int t = 0;
     public static List<FacePart> partShape;
     public static List<FacePart> partEyes;
     public static List<FacePart> partNose;
@@ -175,13 +175,15 @@ public class MainController : MonoBehaviour
             newDislikeListParts.Add(dislikeListParts[randomDislikeParts[i]]);
         }
 
-        QingLike = newDislikeListParts[0];
-        SekiLike = newDislikeListParts[1];
-        AzureLike = newDislikeListParts[2];
+        QingDislike = newDislikeListParts[0];
+        SekiDislike = newDislikeListParts[1];
+        AzureDislike = newDislikeListParts[2];
+
+        Debug.Log("Qing " + QingDislike);
 
         foreach (string v in dislikeListParts)
         {
-            Debug.Log("Dislike dd " + v);
+           // Debug.Log("Dislike dd " + v);
         }
 
         if (randomDislikeParts[0] >= 0 && randomDislikeParts[0] <= 3)
@@ -238,6 +240,7 @@ public class MainController : MonoBehaviour
 
     void NextDayButton()
     {
+        t++;
         Randomising();
         LikeListRandomising();
         DislikeListRandomising();
@@ -253,5 +256,15 @@ public class MainController : MonoBehaviour
             characters[i].SetMouth(randomPartMouth[i] as PartMouth);
         }
 
+    }
+
+    void IdataPersistence.LoadData(GameData data)
+    {
+        this.characters = data.characters;
+    }
+
+    void IdataPersistence.SaveData(GameData data)
+    {
+        data.characters = this.characters;
     }
 }
