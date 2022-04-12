@@ -5,9 +5,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Main : MonoBehaviour
+public class Main : MonoBehaviour, IdataPersistence
 {
     public OverlayLoader loader;
+    public int saveFaceParts;
 
     private bool isInventoryOpen = false;
 
@@ -54,6 +55,16 @@ public class Main : MonoBehaviour
             //StartNewDay();
             //Debug.Log("dffdfd");
         }
+    }
+
+     public void LoadData(GameData data)
+    {
+        this.saveFaceParts = data.saveFaceParts;
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        data.saveFaceParts = this.saveFaceParts;
     }
 
     void Update()
